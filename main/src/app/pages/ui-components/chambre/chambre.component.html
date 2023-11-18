@@ -1,0 +1,92 @@
+<p>chambre works!</p>
+
+
+
+<div class="col-lg-8"   class="w-50"  >
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <mat-card-title>liste des chambres</mat-card-title>
+        <div class="table-responsive m-t-16">
+          <table mat-table [dataSource]="dataSource" class="w-100">
+            <!-- id foyer  Column -->
+            <ng-container matColumnDef="identifiant chambre">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                class="f-w-600 mat-subtitle-1 f-s-14"
+              >
+              identifiant chambre
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <div class="d-flex align-items-center">
+                 
+                  <div class="m-l-16">
+                    <h6 class="mat-subtitle-1 f-s-14 f-w-600">
+                      {{ element.idChambre }}
+                    </h6>
+               
+                  </div>
+                </div>
+              </td>
+            </ng-container>
+
+            <!-- nom foyer Column -->
+            <ng-container matColumnDef="numero de la chambre">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                class="f-w-600 mat-subtitle-1 f-s-14"
+              >
+              numero de la chambre
+              </th>
+              <td mat-cell *matCellDef="let element" class="mat-body-1">
+                {{ element.numeroChambre }}
+              </td>
+            </ng-container>
+
+            <!-- capacite Column -->
+            <ng-container matColumnDef="type du chambre">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                class="f-w-600 mat-subtitle-1 f-s-14"
+              >
+              type du chambre
+              </th>
+              <td mat-cell *matCellDef="let element" class="mat-body-1">
+                {{ element.TypeC}}
+              </td>
+            </ng-container>
+
+           
+
+              <!-- actions Column -->
+              <ng-container matColumnDef="actions">
+                <th   mat-header-cell
+                *matHeaderCellDef
+                class="f-w-600 mat-subtitle-1 f-s-14" > Actions</th>
+                <td  mat-cell *matCellDef="let element" class="mat-body-1">
+                  <!--
+                  <button mat-flat-button color="accent" class="w-50" (click)="updateFoyer(element.idFoyer)">
+                    Modifier
+                  </button>
+                  <button mat-flat-button color="warn" class="w-50" (click)="deleteFoyer(element.idFoyer)" >
+                    Supprimer
+                  </button>  -->
+                  
+                </td>
+              </ng-container>
+            
+         
+
+            
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
